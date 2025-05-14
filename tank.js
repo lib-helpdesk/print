@@ -214,7 +214,7 @@ function fetchDeviceStatusHPM806(printer) {
 			.attr('class','cell')
 			.html("Maintenance Kit: "+(currentMaintenance || "Unknown"))
 			;
-		if (!currentMaintenance || currentMaintenance == "--%") {
+		if (!currentMaintenance || currentMaintenance == "N/A") {
 			divCurrentMaintenance.css('borderLeftColor','orange');
 			statusValue += 0.5;
 		} else if (currentMaintenance.match(/\d+/) && Number(currentMaintenance.match(/\d+/)[0]) < 5) {
@@ -823,12 +823,12 @@ function fetchDeviceStatusHPM651(printer) {
 		//otherwise, increment status value by 0.5
 		var divCurrentMaintenance = $("<div>")
 			.attr('class','cell')
-			.html("Maintenance Kit: "+currentMaintenance)
+			.html("Maintenance Kit: "+(currentMaintenance || "Unknown"))
 			;
-		if (currentMaintenance == "N/A") {
+		if (!currentMaintenance || currentMaintenance == "N/A") {
 			divCurrentMaintenance.css('borderLeftColor','orange');
 			statusValue += 0.5;
-		} else if (Number(currentMaintenance.match(/\d+/)[0]) < 5) {
+		} else if (currentMaintenance.match(/\d+/) && Number(currentMaintenance.match(/\d+/)[0]) < 5) {
 			divCurrentMaintenance.css('borderLeftColor','orange');
 			statusValue -= 0.5;
 		} else {
