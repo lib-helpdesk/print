@@ -1,0 +1,181 @@
+//array for holding printer objects
+var printers = [];
+
+/* ========== ========== ========== ==========
+A printer object consists of relevant information for printers in our service
+They contain the following elements:
+	name: Long name of the printer
+	nameShort: Abbreviated name, usually 2 letters for location and then nmber
+	location: Long name of where the printer is located
+	locationShort: 2 letter abbreviation for locations
+		4S - 4th Street
+		WP - Washington Place
+		KC - Kimmel Center
+		3A - 3rd Avenue
+		RN - Resnet
+	type: generally the model number of the printer, this will determine which function Javascript will use to parse the printer status page
+	ip: IP address of the printer
+========== ========== ========== ========== */
+
+//Bobst Library
+/*
+printers.push({
+	name:'LL2A-PRINTER',
+	nameShort:'LL2A',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.12'
+});
+printers.push({
+	name:'LL2B-PRINTER',
+	nameShort:'LL2B',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.14'
+});
+printers.push({
+	name:'LL2C-PRINTER',
+	nameShort:'LL2C',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.16'
+});
+*/
+printers.push({
+	name:'COLOR A',
+	nameShort:'LL2ColorA',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM651',
+	ip:'172.22.88.247'
+});
+printers.push({
+	name:'COLOR B',
+	nameShort:'LL2ColorB',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM651',
+	ip:'172.22.89.18'
+});
+printers.push({
+	name:'PRINTER A',
+	nameShort:'LL2A',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.24'
+});
+printers.push({
+	name:'PRINTER B',
+	nameShort:'LL2B',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.25'
+});
+printers.push({
+	name:'PRINTER C',
+	nameShort:'LL2C',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.73'
+});printers.push({
+	name:'PRINTER D',
+	nameShort:'LL2D',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.74'
+});
+printers.push({
+	name:'PRINTER E',
+	nameShort:'LL2E',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.88.238'
+});
+printers.push({
+	name:'PRINTER F',
+	nameShort:'LL2F',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.88.239'
+});
+printers.push({
+	name:'PRINTER G',
+	nameShort:'LL2G',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.88.246'
+});
+printers.push({
+	name:'PRINTER H',
+	nameShort:'LL2H',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.88.202'
+});
+/*printers.push({
+	name:'PRINTER I',
+	nameShort:'LL2I',
+	location:'LL2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.12'
+});
+printers.push({
+	name:'PRINTER J',
+	nameShort:'LL2J',
+	location:'LL2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.89.14'
+});
+printers.push({
+	name:'PRINTER K',
+	nameShort:'LL2K',
+	location:'Lower Level 2',
+	locationShort:'LL2',
+	type:'HPM806',
+	ip:'172.22.88.120'
+});
+printers.push({
+	name:'3FL-PRINTER',
+	nameShort:'3FL',
+	location:'3rd Floor',
+	locationShort:'3FL',
+	type:'HP4515',
+	ip:'172.22.91.147'
+});
+printers.push({
+	name:'4FL-PRINTER',
+	nameShort:'4FL',
+	location:'4th Floor',
+	locationShort:'4FL',
+	type:'HP4515',
+	ip:'172.22.91.155'
+});*/
+printers.push({
+	name:'PRINTER 5FL',
+	nameShort:'5FL',
+	location:'5th Floor',
+	locationShort:'5FL',
+	type:'HPM806',
+	ip:'172.22.91.158'
+});
+printers.push({
+	name:'COLOR 5FL',
+	nameShort:'5FLColor',
+	location:'5th Floor',
+	locationShort:'5FL',
+	type:'HPM651',
+	ip:'172.22.91.156'
+});

@@ -1,0 +1,115 @@
+/* Bobst Library Printer Status Style Sheet */
+/* Author: Jose Frias (josefrias.com) */
+
+/*-------------------------------------------*/
+/*-----------------[RESET]-------------------*/
+/*-------------------------------------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+* { margin: 0; }
+html, body { height: 99%; }
+html { font-size:100%; }
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q {	quotes: none; }
+
+blockquote:before, blockquote:after,q:before, q:after { content: ''; content: none; }
+
+/* remember to define focus styles! */
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table { border-collapse: collapse; border-spacing: 0; }
+
+article, aside, footer, header, hgroup, nav, section { display: block; }
+
+/*-------------------------------------------*/
+/*--------------[Basic Styles]---------------*/
+/*-------------------------------------------*/
+
+body { font-family:Arial,Verdana,sans-serif; color: #000000; background-color: #ffffff; }
+
+a { text-decoration: none; color: #b25cf0; }
+a:hover { text-decoration: underline; }
+.clear { clear: both; }
+.ui-tabs-hide { display: none; }
+br.clear { margin: 0px; padding: 0px; }
+
+h1, h2, h3, h4, h5, h6 { padding-bottom: 5px; color: #1e0033; letter-spacing: -1px; line-height: 1em; font-weight: normal; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #1e0033; }
+h1 { font-size: 36px; }
+h2 { font-size: 24px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+p { padding-bottom: 10px; line-height: 16px; }
+strong { font-weight: bold; color: #000000; }
+cite, em, i { font-style: italic; }
+pre, code { font-family: Courier New, monospace; margin-bottom: 10px; }
+ins { text-decoration: none; }
+sup, sub { height: 0; line-height: 1; position: relative; vertical-align: baseline; }
+sup { bottom: 0.8em; }
+sub { top: 0.3em; }
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dd  { margin-left: 1.5em;}
+blockquote  { margin: 1.5em; padding: 1em; color: #666666; background: #e6e6e6; font-style: italic; border: 1px solid #dcdcdc; }
+blockquote p { padding-bottom: 0px; }
+
+input[type=text],input.text, input.title, textarea, select { background-color:#fff; border:1px solid #bbb; padding: 2px; color: #4e4e4e; }
+input[type=text]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus { border-color:#2D3940; color: #3e3e3e; }
+input[type=text], input.text, input.title, textarea, select { margin:0.5em 0; }
+textarea { padding: 4px; }
+
+img#about-image { float: left; margin: 3px 8px 8px 0px; }
+
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .clearfix { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.container { margin: 0 auto; padding: 0; width: 960px; }
+
+/*-------------------------------------------*/
+/*---------------[Main Layout]---------------*/
+/*-------------------------------------------*/
+
+div#layout { clear:both; margin:0; width:100%; font-family: Arial, Helvetica, sans-serif; border-collapse: collapse; text-align:center; padding-bottom:15px; }
+div#layout .title { font-weight:bold; font-size: 2.5em; border:1px solid #818790; background-color:#57068c; color:#ffffff; text-transform:uppercase;  padding:10px 0; text-align: center; }
+
+div#layout div.status { clear: both; display: none; margin: 20px 0; background-color:#ffffff; }
+div#urgent span.statusHead { font-size:2em; background-color:red; color:#efefef; }
+div#noresponse span.statusHead { background-color:red; color:#efefef; }
+div#needservice span.statusHead { background-color:orange; color:#efefef; }
+div#goodservice span.statusHead { background-color:green; color:#efefef; }
+
+span.statusHead { display:block; clear:both; width: 100%; color:#fff; font-size: 2em; padding:5px 0; text-align:center; background-color:#efefef; }
+
+div#noresponse div.pending { padding:10px; }
+
+div.printerBox { display:inline-block; vertical-align:top; margin:5px; padding:0; width:300px; height:inherit; text-align:center; border:1px solid #57068c; background-color:#ffffff; }
+div.printerBox div.printerTitle { margin:0; font-size:1em; background-color:#57068c; color:#ffffff;  padding:8px 0; width:300px; height:auto; }
+div.printerBox div.printerTitle a, div.printerBox div.printerTitle a:visited { color:#ffffff; text-decoration: underline; }
+div.printerBox div.printerTitle a:hover, div.printerBox div.printerTitle a:active { color:#818790; text-decoration: none; }
+div.printerBox div.celltitle { margin:0; font-size:1em; background-color:#818790; color:#ffffff;  padding:2px 0; width:300px; height:auto; }
+div.printerBox div.cell { font-size:1em; padding:3px; height:auto; border-left: solid 14px #818790; min-width: 275px; background-color: #ffffff; color:#000000; }
+.center { text-align:center; }
+
+div#refresh { position:fixed; bottom:5px; right:5px; border:solid 3px blue; padding:3px; color:#000000; background-color: #ffffff; }

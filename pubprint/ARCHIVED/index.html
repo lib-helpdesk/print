@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Bobst Library Printers Status</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+		<script type="text/javascript" src="js/jquery-min.js"></script>		
+		<script type="text/javascript" src="printers.js"></script>
+		<script type="text/javascript" src="tank.js"></script>
+		<style>
+			td {
+				text-align: center;
+				width: 20%;
+				border: solid 1px black;
+			}
+			
+			div.status {
+				display: none;
+				margin-bottom: 5px; 
+				padding: 3px;
+			}
+			
+			span.statusHead {
+				font-weight: bold;
+				font-size: 20px;
+			}
+			
+			div#refresh {
+				position: fixed;
+				top: 5px;
+				right: 5px;
+				border: solid 3px blue;
+				padding: 3px;
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="urgent" class="status" style="border: solid 3px red;">
+			<span class="statusHead">URGENT: SERVICE IMMEDIATELY</span>
+		</div>
+		<div id="noresponse" class="status" style="border: solid 3px red;">
+			<span class="statusHead">No Response: Please Investigate</span>
+		</div>
+		<div id="needservice" class="status" style="border: solid 3px orange;">
+			<span class="statusHead">Needs Service Soon</span>
+		</div>
+		<div id="goodservice" class="status" style="border: solid 3px green;">
+			<span class="statusHead">Good Service</span>
+		</div>
+		<div id="refresh"></div>
+	</body>
+</html>

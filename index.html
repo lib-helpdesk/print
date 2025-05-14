@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Bobst Library Printers Status</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<script type="text/javascript" src="js/jquery-min.js"></script>		
+	<script type="text/javascript" src="printers.js"></script>
+	<script type="text/javascript" src="tank.js"></script>
+</head>
+<body>
+	<div id="layout">
+		<div class="title">Bobst Library Printers Status</div>
+
+
+		<div id="urgent" class="status">
+			<span class="statusHead">URGENT: SERVICE IMMEDIATELY</span>
+		</div>
+
+
+		<div id="noresponse" class="status">
+			<span class="statusHead">No Response: Please Investigate</span>
+		</div>
+
+
+
+		<div id="needservice" class="status">
+			<span class="statusHead">Needs Service Soon</span>
+		</div>
+
+
+		<div id="goodservice" class="status">
+			<span class="statusHead">Good Service</span>
+		</div>
+
+		<div id="refresh"></div>
+	</div>
+</body>
+</html>
