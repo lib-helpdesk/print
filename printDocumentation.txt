@@ -1,0 +1,8 @@
+Uses php served through apache
+
+If migrating make sure to install the proper php dependencies.
+
+sudo apt update
+sudo apt install php libapache2-mod-php
+sudo a2enmod php
+sudo systemctl restart apache2
