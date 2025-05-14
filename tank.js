@@ -164,10 +164,10 @@ function fetchDeviceStatusHPM806(printer) {
 		//if it contains jam/'load tray 1'/error/open, decrement status value by 3
 		//this ensures that these statuses will put the printer in Urgent state
 		//other than that, it's fine
-		if (currentStatus.match(/(jam)|(load\ tray\ 1)|(error)|(open)|(CLOSE\ FRONT\ OR\ LEFT\ DOOR)/i)) {
+		if (currentStatus && currentStatus.match(/(jam)|(load\ tray\ 1)|(error)|(open)|(CLOSE\ FRONT\ OR\ LEFT\ DOOR)/i)) {
 			divCurrentStatus.css('borderLeftColor','red');
 			statusValue -= 3;
-		} else if (currentStatus.match(/(ready)/i)) {
+		} else if (currentStatus && currentStatus.match(/(ready)/i)) {
 			divCurrentStatus.css('borderLeftColor','green');
 		} else {
 			divCurrentStatus.css('borderLeftColor','orange');
@@ -189,15 +189,15 @@ function fetchDeviceStatusHPM806(printer) {
 		//otherwise, increment status value by 1.0
 		var divCurrentToner = $("<div>")
 			.attr('class','cell')
-			.html("Toner: "+currentToner)
+			.html("Toner: "+(currentToner || "Unknown"))
 		;		
-		if (currentToner == "N/A") {	
+		if (!currentToner || currentToner == "N/A") {	
 			divCurrentToner.css('borderLeftColor','orange');
 			statusValue += 0.0;
-		} else if (Number(currentToner.match(/\d+/)[0]) < 1) {
+		} else if (currentToner.match(/\d+/) && Number(currentToner.match(/\d+/)[0]) < 1) {
 			divCurrentToner.css('borderLeftColor','red');
 			statusValue -= 3;
-		} else if (Number(currentToner.match(/\d+/)[0]) < 10) {
+		} else if (currentToner.match(/\d+/) && Number(currentToner.match(/\d+/)[0]) < 10) {
 			divCurrentToner.css('borderLeftColor','orange');
 			statusValue += 0.3;
 		} else {
@@ -212,12 +212,12 @@ function fetchDeviceStatusHPM806(printer) {
 		//otherwise, increment status value by 0.5
 		var divCurrentMaintenance = $("<div>")
 			.attr('class','cell')
-			.html("Maintenance Kit: "+currentMaintenance)
+			.html("Maintenance Kit: "+(currentMaintenance || "Unknown"))
 			;
-		if (currentMaintenance == "--%") {
+		if (!currentMaintenance || currentMaintenance == "--%") {
 			divCurrentMaintenance.css('borderLeftColor','orange');
 			statusValue += 0.5;
-		} else if (Number(currentMaintenance.match(/\d+/)[0]) < 5) {
+		} else if (currentMaintenance.match(/\d+/) && Number(currentMaintenance.match(/\d+/)[0]) < 5) {
 			divCurrentMaintenance.css('borderLeftColor','orange');
 			statusValue -= 0.5;
 		} else {
@@ -432,10 +432,10 @@ function fetchDeviceStatusHP806(printer) {
 		//if it contains jam/'load tray 1'/error/open, decrement status value by 3
 		//this ensures that these statuses will put the printer in Urgent state
 		//other than that, it's fine
-		if (currentStatus.match(/(jam)|(load\ tray\ 1)|(error)|(open)|(CLOSE\ FRONT\ OR\ LEFT\ DOOR)/i)) {
+		if (currentStatus && currentStatus.match(/(jam)|(load\ tray\ 1)|(error)|(open)|(CLOSE\ FRONT\ OR\ LEFT\ DOOR)/i)) {
 			divCurrentStatus.css('borderLeftColor','red');
 			statusValue -= 3;
-		} else if (currentStatus.match(/(ready)/i)) {
+		} else if (currentStatus && currentStatus.match(/(ready)/i)) {
 			divCurrentStatus.css('borderLeftColor','green');
 		} else {
 			divCurrentStatus.css('borderLeftColor','orange');
@@ -700,10 +700,10 @@ function fetchDeviceStatusHPM651(printer) {
 		//if it contains jam/'load tray 1'/error/open, decrement status value by 3
 		//this ensures that these statuses will put the printer in Urgent state
 		//other than that, it's fine
-		if (currentStatus.match(/(jam)|(load\ tray\ 1)|(error)|(open)|(CLOSE\ FRONT\ OR\ LEFT\ DOOR)|(Jams)|(Jams\ in\ right\ door) /i)) {
+		if (currentStatus && currentStatus.match(/(jam)|(load\ tray\ 1)|(error)|(open)|(CLOSE\ FRONT\ OR\ LEFT\ DOOR)|(Jams)|(Jams\ in\ right\ door) /i)) {
 			divCurrentStatus.css('borderLeftColor','red');
 			statusValue -= 3;
-		} else if (currentStatus.match(/(ready)/i)) {
+		} else if (currentStatus && currentStatus.match(/(ready)/i)) {
 			divCurrentStatus.css('borderLeftColor','green');
 		} else {
 			divCurrentStatus.css('borderLeftColor','orange');
@@ -740,15 +740,15 @@ function fetchDeviceStatusHPM651(printer) {
 		//otherwise, increment status value by 1.0
 		var divCurrentToner = $("<div>")
 			.attr('class','cell')
-			.html("Toner: "+currentToner)
+			.html("Toner: "+(currentToner || "Unknown"))
 		;		
-		if (currentToner == "N/A") {	
+		if (!currentToner || currentToner == "N/A") {	
 			divCurrentToner.css('borderLeftColor','orange');
 			statusValue += 0.0;
-		} else if (Number(currentToner.match(/\d+/)[0]) < 1) {
+		} else if (currentToner.match(/\d+/) && Number(currentToner.match(/\d+/)[0]) < 1) {
 			divCurrentToner.css('borderLeftColor','red');
 			statusValue -= 3;
-		} else if (Number(currentToner.match(/\d+/)[0]) < 10) {
+		} else if (currentToner.match(/\d+/) && Number(currentToner.match(/\d+/)[0]) < 10) {
 			divCurrentToner.css('borderLeftColor','orange');
 			statusValue += 0.3;
 		} else {
@@ -763,12 +763,12 @@ function fetchDeviceStatusHPM651(printer) {
 		//otherwise, increment status value by 0.5
 		var divCurrentCyan = $("<div>")
 			.attr('class','cell')
-			.html("Cyan Cartridge: "+currentCyan)
+			.html("Cyan Cartridge: "+(currentCyan || "Unknown"))
 			;
-		if (currentCyan == "N/A") {
+		if (!currentCyan || currentCyan == "N/A") {
 			divCurrentCyan.css('borderLeftColor','orange');
 			statusValue += 0.5;
-		} else if (Number(currentCyan.match(/\d+/)[0]) < 5) {
+		} else if (currentCyan.match(/\d+/) && Number(currentCyan.match(/\d+/)[0]) < 5) {
 			divCurrentCyan.css('borderLeftColor','orange');
 			statusValue -= 0.5;
 		} else {
@@ -783,12 +783,12 @@ function fetchDeviceStatusHPM651(printer) {
 		//otherwise, increment status value by 0.5
 		var divCurrentMagenta = $("<div>")
 			.attr('class','cell')
-			.html("Magenta Cartridge: "+currentMagenta)
+			.html("Magenta Cartridge: "+(currentMagenta || "Unknown"))
 			;
-		if (currentMagenta == "N/A") {
-			divCurrentCyan.css('borderLeftColor','orange');
+		if (!currentMagenta || currentMagenta == "N/A") {
+			divCurrentMagenta.css('borderLeftColor','orange');
 			statusValue += 0.5;
-		} else if (Number(currentMagenta.match(/\d+/)[0]) < 5) {
+		} else if (currentMagenta.match(/\d+/) && Number(currentMagenta.match(/\d+/)[0]) < 5) {
 			divCurrentMagenta.css('borderLeftColor','orange');
 			statusValue -= 0.5;
 		} else {
@@ -803,12 +803,12 @@ function fetchDeviceStatusHPM651(printer) {
 		//otherwise, increment status value by 0.5
 		var divCurrentYellow = $("<div>")
 			.attr('class','cell')
-			.html("Yellow Cartridge: "+currentCyan)
+			.html("Yellow Cartridge: "+(currentYellow || "Unknown"))
 			;
-		if (currentYellow == "N/A") {
+		if (!currentYellow || currentYellow == "N/A") {
 			divCurrentYellow.css('borderLeftColor','orange');
 			statusValue += 0.5;
-		} else if (Number(currentYellow.match(/\d+/)[0]) < 5) {
+		} else if (currentYellow.match(/\d+/) && Number(currentYellow.match(/\d+/)[0]) < 5) {
 			divCurrentYellow.css('borderLeftColor','orange');
 			statusValue -= 0.5;
 		} else {
@@ -823,7 +823,7 @@ function fetchDeviceStatusHPM651(printer) {
 		//otherwise, increment status value by 0.5
 		var divCurrentMaintenance = $("<div>")
 			.attr('class','cell')
-			.html("Maintenance Kit: "+currentCyan)
+			.html("Maintenance Kit: "+currentMaintenance)
 			;
 		if (currentMaintenance == "N/A") {
 			divCurrentMaintenance.css('borderLeftColor','orange');
